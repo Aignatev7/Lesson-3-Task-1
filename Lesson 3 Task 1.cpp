@@ -14,55 +14,49 @@ public:
 		this->num2 = num2;														// инициализация
 	}
 
-	void double_add(double num1, double num2)									//метод возвращает результат сложения num1 и num2
+	void double_add()															//метод возвращает результат сложения num1 и num2
 	{
 		double result = num1 + num2;
 		std::cout << num1 << " + " << num2 << " = " << result << std::endl;
 	}
 
-	void double_multiply(double num1, double num2)								//метод возвращает результат перемножения num1 и num2
+	void double_multiply()														//метод возвращает результат перемножения num1 и num2
 	{
 		double result = num1 * num2;
 		std::cout << num1 << " * " << num2 << " = " << result << std::endl;
 	}
 
-	void double_subtract_1_2(double num1, double num2)							//метод возвращает результат вычитания num2 из num1
+	void double_subtract_1_2()													//метод возвращает результат вычитания num2 из num1
 	{
 		double result = num1 - num2;
 		std::cout << num1 << " - " << num2 << " = " << result << std::endl;
 	}
 
-	void double_subtract_2_1(double num1, double num2)							//метод возвращает результат вычитания num1 из num2
+	void double_subtract_2_1()													//метод возвращает результат вычитания num1 из num2
 	{
 		double result = num2 - num1;
 		std::cout << num2 << " - " << num1 << " = " << result << std::endl;
 	}
 
-	void double_divide_1_2(double num1, double num2)							//метод возвращает результат деления num1 на num2
+	void double_divide_1_2()													//метод возвращает результат деления num1 на num2
 	{
 		double result = num1 / num2;
 		std::cout << num1 << " / " << num2 << " = " << result << std::endl;
 	}
 
-	void double_divide_2_1(double num1, double num2)							//метод возвращает результат деления num2 на num1
+	void double_divide_2_1()													//метод возвращает результат деления num2 на num1
 	{
 		double result = num2 / num1;
 		std::cout << num2 << " / " << num1 << " = " << result << std::endl;
 	}
 
-	void bool_set_num1(bool num1)												//метод установает значение поля num1 равное значению аргумента num1 в случае,  
+	void bool_set_num1(double num1)												//метод установает значение поля num1 равное значению аргумента num1 в случае,  
 	{																			//если значение аргумента не равно 0.															
-		if (num1 != 0)															//Возвращает true, если установка произошла успешно, в обратном случае false
-			std::cout << "num1 = true" << std::endl;
-		else
-			std::cout << "num1 = false" << std::endl;
+		if (num1 != 0) this->num1 = num1;										//Возвращает true, если установка произошла успешно, в обратном случае false
 	}
-	void bool_set_num2(bool num2)												//метод установает значение поля num2 равное значению аргумента num1 в случае,
-	{																			//если значение аргумента не равно 0.
-		if (num2 != 0)															//Возвращает true, если установка произошла успешно, в обратном случае false
-			std::cout << "num2 = true" << std::endl;
-		else
-			std::cout << "num2 = false" << std::endl;
+	void bool_set_num2(double num2)												//метод установает значение поля num2 равное значению аргумента num1 в случае,
+	{																			//если значение аргумента не равно 0.		
+		if (num2 != 0) this->num2 = num2;										//Возвращает true, если установка произошла успешно, в обратном случае false
 	}
 };
 
@@ -81,22 +75,30 @@ int main(int argc, char** argv)
 		std::cout << "Введите num2: ";
 		std::cin >> num2;
 
-		if (num2 == 0)
+		if (num1 == 0)
 			do
 			{
 				std::cout << "Неверный ввод!" << std::endl;
-				std::cout << "Введите num2: ";
-				std::cin >> num2;
-			} while (num2 == 0);
+				std::cout << "Введите num1: ";
+				std::cin >> num1;
+			} while (num1 == 0);
 
-			calc.double_add(num1, num2);
-			calc.double_multiply(num1, num2);
-			calc.double_subtract_1_2(num1, num2);
-			calc.double_subtract_2_1(num1, num2);
-			calc.double_divide_1_2(num1, num2);
-			calc.double_divide_2_1(num1, num2);
-			calc.bool_set_num1(num1);
-			calc.bool_set_num2(num2);
+			if (num2 == 0)
+				do
+				{
+					std::cout << "Неверный ввод!" << std::endl;
+					std::cout << "Введите num2: ";
+					std::cin >> num2;
+				} while (num2 == 0);
+
+				calc.bool_set_num1(num1);
+				calc.bool_set_num2(num2);
+				calc.double_add();
+				calc.double_multiply();
+				calc.double_subtract_1_2();
+				calc.double_subtract_2_1();
+				calc.double_divide_1_2();
+				calc.double_divide_2_1();
 
 	} while (true);
 
@@ -142,6 +144,3 @@ num1 * num2 = 25
 num1 / num2 = 1
 num2 / num1 = 1
 */
-
-
-
