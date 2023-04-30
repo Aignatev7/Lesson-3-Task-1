@@ -76,21 +76,23 @@ int main(int argc, char** argv)
 		std::cin >> num2;
 
 		if (num1 == 0)
+		{
 			do
 			{
 				std::cout << "Неверный ввод!" << std::endl;
 				std::cout << "Введите num1: ";
 				std::cin >> num1;
 			} while (num1 == 0);
-
+		}
 			if (num2 == 0)
+			{
 				do
 				{
 					std::cout << "Неверный ввод!" << std::endl;
 					std::cout << "Введите num2: ";
 					std::cin >> num2;
 				} while (num2 == 0);
-
+			}
 				calc.bool_set_num1(num1);
 				calc.bool_set_num2(num2);
 				calc.double_add();
@@ -99,7 +101,7 @@ int main(int argc, char** argv)
 				calc.double_subtract_2_1();
 				calc.double_divide_1_2();
 				calc.double_divide_2_1();
-
+	
 	} while (true);
 
 	return 0;
